@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "801108664694",
+    "project_id": "imei-app-f5710",
+    "storage_bucket": "imei-app-f5710.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:801108664694:android:c9d99b42adb88d6de6da57",
+        "android_client_info": {
+          "package_name": "com.example.imei_number"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "801108664694-5bne0gu3atnu1eobqlufoblbdrphgd1q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_2LlOYcuObpyMAXRByyY9uQfEc_uWEjs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "801108664694-5bne0gu3atnu1eobqlufoblbdrphgd1q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

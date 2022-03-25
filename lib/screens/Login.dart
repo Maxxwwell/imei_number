@@ -42,7 +42,7 @@ class _LoginState extends State<Login> {
             const Text(
               'Enter your phone number',
               style: TextStyle(
-                fontSize: 40,
+                fontSize: 25,
                 fontWeight: FontWeight.bold,
               ),
             ),

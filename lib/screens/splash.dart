@@ -10,10 +10,28 @@ class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
+  late AnimationController controller;
+  late Animation animation;
+
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 4), () {
+    controller = AnimationController(
+      duration: const Duration(seconds: 1),
+      vsync: this,
+      upperBound: 1,
+    );
+    animation = CurvedAnimation(
+      parent: controller,
+      curve: Curves.easeInOut,
+    );
+    controller.forward();
+    controller.addListener(() {
+      setState(() {});
+    });
+
+    Future.delayed(const Duration(milliseconds: 3500), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
@@ -27,27 +45,23 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      backgroundColor: AppColors.yellow,
+      body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        color: AppColors.white,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             const SizedBox(),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.asset(
-                'assets/images/new-mtn-logo.jpg',
-                height: 200,
-                width: 200,
-                fit: BoxFit.cover,
-              ),
+            Image.asset(
+              'assets/images/new-mtn-logo.jpg',
+              height: animation.value * 200,
+              fit: BoxFit.contain,
             ),
             LoadingAnimationWidget.fourRotatingDots(
-              color: AppColors.yellow,
-              size: 35,
-            )
+              color: AppColors.black,
+              size: 32,
+            ),
           ],
         ),
       ),
